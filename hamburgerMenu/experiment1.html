@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/17544686b3.js" crossorigin="anonymous"></script>
+    <title>Hamburger</title>
+</head>
+<body>
+    <header>
+        
+        <h2 class="logo">Hamburger</h2>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+    </header>
+    <section>
+        <h1>This is an experiment</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est.</p>
+    </section>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        header{
+            width: 100%;
+            background-color: rgb(6, 6, 61);
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo  {
+            color: white;
+            font-size: 2.5rem;
+            padding: 10px 20px;
+        }
+        .navbar{
+            list-style: none;
+            /* float: right; */
+            margin: 10px 20px;
+        }
+        .navbar li{
+            display: inline-block;
+            margin: auto 10px;
+
+        }
+        .navbar a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .checkbtn{
+            display: none;
+            font-size: 2rem;
+            color: white;
+            margin-right: 30px;
+        }
+        #check{
+            display: none;
+        }
+        @media screen and (max-width: 1200px){
+            .checkbtn{
+                display: block;
+                cursor: pointer;
+            }
+            .navbar{
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                padding: 20% 0;
+                position: fixed;
+                background-color: blueviolet;
+                top: 60px;
+                left: -120%;
+                transition: all .5s;
+            }
+            .navbar li{
+                display: block;
+                padding: 30px 0;
+            }
+            #check:checked ~ .navbar{
+                left: -20px;
+            }
+        }
+        section{
+            background-color: #f4f4f4;
+            height: 100vh;
+            text-align: center;
+        }
+        h1{
+            font-size: 40px;
+            padding: 10% 0 0 0;
+        }
+        p{
+            font-size: 20px;
+            padding: 50px;
+        }
+    </style>
+</body>
+</html>

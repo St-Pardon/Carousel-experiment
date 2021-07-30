@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated</title>
+</head>
+<body>
+    <header>
+        
+        <h2 class="logo">Hamburger</h2>
+
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
+    </header>
+    <section>
+        <h1>This is an experiment</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem laboriosam ullam autem qui reprehenderit accusantium cupiditate error rerum. Alias quidem ipsa obcaecati ducimus culpa blanditiis? Voluptatibus error in earum est.</p>
+    </section>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+        header{
+            width: 100%;
+            background-color: rgb(6, 6, 61);
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo  {
+            color: white;
+            font-size: 2.5rem;
+            padding: 10px 20px;
+        }
+        .navbar{
+            list-style: none;
+            /* float: right; */
+            margin: 10px 20px;
+        }
+        .navbar li{
+            display: inline-block;
+            margin: auto 10px;
+
+        }
+        .navbar a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        section{
+            background-color: #f4f4f4;
+            height: 100vh;
+            text-align: center;
+        }
+        h1{
+            font-size: 40px;
+            padding: 10% 0 0 0;
+        }
+        p{
+            font-size: 1.5rem;
+            padding: 50px;
+        }
+        .hamburger{
+            display: none;
+        }
+        @media screen and (max-width: 1000px){
+            .navbar{
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                padding: 20% 0;
+                position: fixed;
+                background-color: blueviolet;
+                top: 60px;
+                left: -20px;
+                transition: all .5s ease-out;
+                clip-path: circle(50px at 90% 10%);
+                -webkit-clip-path: circle(50px at 90% -10%);
+                pointer-events: none;
+            }
+            .open{
+                clip-path: circle(2000px at 90% 10%);
+                -webkit-clip-path: circle(1500px at 90% -10%);
+                pointer-events: all;
+            }
+            .navbar li{
+                display: block;
+                padding: 30px 0;
+            }
+            .hamburger{
+                display: block;
+                margin: 15px 20px 0 0;
+                cursor: pointer;
+            }
+            .lines{
+                width: 30px;
+                height: 3px;
+                background-color: white;
+                margin: 5px;
+                z-index: 100;
+            }
+            
+        }
+    </style>
+    <script>
+        const nav = document.querySelector(".navbar");
+        const hamburger = document.querySelector(".hamburger");
+        const lines = document.getElementsByClassName("lines");
+
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("open");
+            console.log("opened")
+        });
+    </script>
+</body>
+</html>
